@@ -1,0 +1,35 @@
+ships = []
+weight_cargo = []
+print("welcome to chennai port management program")
+print("this program displays weight of cargo and name of ships in the facility")
+print("press the following keys for funtions as mentioned")
+print("1 add ship")
+print("2 search ship")
+print("3 remove ship")
+print("4 print all ships and cargo")
+print("5 exit program")
+while True:
+    choice = int(input("enter choice: "))
+    if choice == 1:
+        name = input("enter name of ship: ")
+        cargo = int(input("load of cargo in tons:"))
+        ships.append(name)
+        weight_cargo.append(cargo)
+    if choice == 2:
+        name_search = input("enter name of ship being searched")
+        for i in range(len(ships)):
+            if ships[i] == name_search:
+                print("ship is in the facility")
+                print(ships[i],"has a cargo of",weight_cargo[i],"ton")
+    if choice == 3:
+        name_remove = input("enter ship to be removed: ")
+        for i in range(len(ships)):
+            if ships[i] == name_remove:
+                n = i
+        del ships[n]
+        del weight_cargo[n]
+    if choice == 4:
+        for i in range(len(ships)):
+            print(ships[i],"holds cargo of",weight_cargo[i],"ton")
+    if choice == 5:
+        break
